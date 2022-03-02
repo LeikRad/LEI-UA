@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITW 2021/22 - Favourites</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+        iframe {
+            position: absolute;
+            top: 100px;
+            width: 100%;
+            height: calc(100% - 100px);
+            z-index: -1
+        }
+       
+        .logo {
+            width: 100px
+        }
+        .selection {
+            margin-top:70px;
+            z-index:-1
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container-fluid" style="width:95%">
+            <a class="navbar-brand" href="index.html">
+                <img src="Images/formula-1-logo.png" class="logo" aria-current="page" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="drivers.html">Drivers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="constructors.html">Constructors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nationalities.html">Nationalities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="circuits.html">Circuits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="countries.html">Countries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="races.html">Races</a></li>
+                    <li class="nav-item"><a class="nav-link" href="seasons.html">Seasons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="favorites.html">Favourites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="statistics.html">Statistics</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <div class="selection container">
+        <form id="favoriteSelector">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="favoriteType" id="favoriteType1" value="drivers" checked>
+                <label class="form-check-label" for="favoriteType1">Drivers</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="favoriteType" id="favoriteType2" value="constructors">
+                <label class="form-check-label" for="favoriteType2">Constructors</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="favoriteType" id="favoriteType3" value="countries">
+                <label class="form-check-label" for="favoriteType3">Host Countries</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="favoriteType" id="favoriteType4" value="nationalities">
+                <label class="form-check-label" for="favoriteType4">Nationalities</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="favoriteType" id="favoriteType5" value="circuits">
+                <label class="form-check-label" for="favoriteType5">Circuits</label>
+            </div>
+        </form>
+    </div>
+
+
+    <iframe src="favoriteDrivers.html" seamless></iframe>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/output/knockout-latest.min.js"></script>
+    <script src="favorites.js"></script>
+</body>
+</html>
