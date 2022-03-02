@@ -1,0 +1,75 @@
+﻿body {
+    font-family: 'Lobster Two', cursive;
+}
+
+.logo{
+    width:120px;
+}
+
+.btn{
+    background-color:#f76540;
+    color:#fff;
+    
+}
+
+.Placeholder{
+    height:604px;
+    text-align:center
+}
+
+.carousel {
+    width: 100%;
+    margin-top: 90px
+}
+
+.card{
+    margin:auto;
+    min-height: 450px;
+}
+
+.card-img-top{
+    height:250px;
+}
+
+.card-text{
+    text-align:center
+}
+.carousel-item {
+    z-index: -100;
+    height: 461px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    .carousel-item:nth-child(1) {
+        background-image: url('../Images/high-resolution-food-1920x1200-wallpaper337475.jpg');
+    }
+
+    .carousel-item:nth-child(2) {
+        background-image: url('../Images/3SuIdCy.jpeg');
+    }
+
+
+    .carousel-item:nth-child(3) {
+        background-image: url('../Images/oUKmGpK.jpeg');
+    }
+
+.Consumidor {
+    background-color: #ededed
+}
+.Comerciante {
+    background-color: #467fd7
+}
+.Instituições {
+    background-color: #f28500
+}
+.Missao {
+    background-color: #8fae2d
+}
+.Sobrenos {
+    background-color: #fa7470
+}
+.HumanRacoons {
+    background-color: #c1d4f1
+}   

@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Waste Never</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="./Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="./CSS/Reg.css" rel="stylesheet" />
+    <style>
+        input, select, textarea {
+            font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+            input[type=submit], input[type=reset] {
+                padding: 0.375rem 0.75rem;
+                font-size: 1rem;
+            }
+
+            select, input[type=text], input[type=password] {
+                font-size: 1rem;
+                border: 1px solid #ced4da;
+                border-radius: 0.25rem;
+                width: 100%;
+            }
+
+
+        textarea {
+            width: 100%;
+            font-size: 1rem;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid" style="width:85%">
+            <a class="navbar-brand" href="index.html">
+                <img src="./Images/52dfbb4a9250f6074a27f9fa54e8450a.png" class="logo" aria-current="page" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html#Nos">Waste Never</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Consumidor">Consumidor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Comerciante">Comerciantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Instituicoes">Instituições</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#carousel">Início</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="restaurantMain.html"><i class="fa fa-home" style="font-size:2em"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin:auto; width:860px; margin-top:150px; margin-bottom:8%">
+        <h1 style="text-align:center; color:orange; padding-top:10px"><b>Nova Oferta</b></h1>
+        <div class="row my-5">
+            <div class="col-3">
+                <label>Oferta Destinada a:</label>
+            </div>
+            <div class="col-9">
+                <select name="TipoUtilizador" id="TipoUtilizador">
+                    <option value="Consumer" selected>Consumidor</option>
+                    <option value="Charity">Instituição de caridade</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Produto:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="Produto" value="" placeholder="Produto" />
+                    <div class="d-none text-danger col-form-label" id="ProdutoError">
+                        <i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório.
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2 d-block" id="PriceOff">
+                    <label>Preço:</label>
+                </div>
+                <div class="col-10 d-block" id="PriceOn">
+                    <input type="text" id="Price" value="" placeholder="0.00€" />
+                    <div class="d-none text-danger col-form-label" id="PriceError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório.</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Limite De Tempo:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="Time" value="" placeholder="HH:MM:SS" />
+                    <div class="d-none text-danger col-form-label" id="TimeError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório.</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Imagem:</label>
+                </div>
+                <div class="col-10">
+                    <input type="file" id="imagefile" name="filename" />
+                    <div class="d-none text-danger col-form-label" id="ImageError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório e tem que ser igual ao campo de Palavra-Passe.</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Descrição:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="Description" value="" placeholder="Descrição" style="height:225px" />
+                </div>
+            </div>
+            <div style="text-align:center">
+                <input type="checkbox" id="Terms" value="Termos"> Ao clicar, está de acordo com os <a href="http:xxxxxxxxxx" style="color:orange">Termos e Condições</a><br />
+                <div class="d-none text-danger col-form-label" id="TermsError"><i class="fa fa-exclamation-triangle"></i> Certifique-se que leu os termos e os aceitou.</div>
+                <button id="Submit" class="btn btn-outline-warning" style="margin-top:5px"> Criar &rarr;</button>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark fixed-bottom" style="background-color: #f76540;">
+        <div class="container small">
+            <div class="navbar-text">Waste Never © 2022 · Todos os direitos reservados.</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+    <script src="./Scripts/bootstrap.bundle.min.js"></script>
+
+    <script src="./Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.6.0.js"></script>
+    <script src="Javascript/criaroferta.js"></script>
+</body>
+</html>

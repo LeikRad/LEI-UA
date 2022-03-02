@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Waste Never</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet">
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="./Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="./CSS/Reg.css" rel="stylesheet" />
+    <style>
+        input, select, textarea {
+            font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+            input[type=submit], input[type=reset] {
+                padding: 0.375rem 0.75rem;
+                font-size: 1rem;
+            }
+
+            select, input[type=text], input[type=password] {
+                font-size: 1rem;
+                border: 1px solid #ced4da;
+                border-radius: 0.25rem;
+                width: 100%;
+            }
+
+
+        textarea {
+            width: 100%;
+            font-size: 1rem;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid" style="width:85%">
+            <a class="navbar-brand" href="index.html">
+                <img src="./Images/52dfbb4a9250f6074a27f9fa54e8450a.png" class="logo" aria-current="page" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item active"><a class="nav-link" href="index.html#Nos">Waste Never</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Consumidor">Consumidor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Comerciante">Comerciantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Instituicoes">Instituições</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#carousel">Início</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li><a href="Login.html" class="btn btn-outline my-2 my-sm-0">Login &rarr;</a></li>
+                    <li style="margin-left:12px"><a href="Registrar.html" class="btn btn-outline my-2 my-sm-0">Registrar &rarr;</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="margin:auto; width:860px; margin-top:150px">
+        <h1 style="text-align:center; color:orange; padding-top:10px"><b>Registo</b></h1>
+        <div class="row my-5">
+            <div class="col-2">
+                <label>Utilizador:</label>
+            </div>
+            <div class="col-10">
+                <select name="TipoUtilizador" id="TipoUtilizador">
+                    <option value="Consumer" selected>Consumidor</option>
+                    <option value="Comercial">Comerciante</option>
+                    <option value="Charity">Instituição de caridade</option>
+                </select>
+            </div>
+        </div>
+        <div id="Consumer">
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Email:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="EmailConsumer" value="" placeholder="Email" />
+                    <div class="d-none text-danger col-form-label" id="EmailErrorConsumer">
+                        <i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (mínimo de 10 caracteres e máximo de 100; Deve possuir o caracter @ e
+                        um ponto depois).
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Nome:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="NameConsumer" value="" placeholder="Nome" />
+                    <div class="d-none text-danger col-form-label" id="NomeErrorConsumer"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 10 letras; Max: 100 letras).</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Palavra-passe:</label>
+                </div>
+                <div class="col-10">
+                    <input type="password" id="PasswordConsumer" value="" placeholder="Palavra-Passe" />
+                    <div class="d-none text-danger col-form-label" id="PasswordErrorConsumer"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min 8 caracteres).</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Confirmar:</label>
+                </div>
+                <div class="col-10">
+                    <input type="password" id="PasswordConfConsumer" value="" placeholder="Confrimar palavra-passe" />
+                    <div class="d-none text-danger col-form-label" id="PasswordConfErrorConsumer"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório e tem que ser igual ao campo de Palavra-Passe.</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Comercial">
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Email:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="EmailComercial" value="" placeholder="Email" />
+                    <div class="d-none text-danger col-form-label" id="EmailErrorComercial">
+                        <i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (mínimo de 10 caracteres e máximo de 100; Deve possuir o caracter @ e
+                        um ponto depois).
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Nome:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="NameComercial" value="" placeholder="Nome" />
+                    <div class="d-none text-danger col-form-label" id="NomeErrorComercial"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 10 letras; Max: 100 letras).</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Local:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="LocalComercial" value="" placeholder="Local" />
+                    <div class="d-none text-danger col-form-label" id="LocalErrorComercial"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 10 letras; Max: 100 letras).</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Dono:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="OwnerComercial" value="" placeholder="Nome" />
+                    <div class="d-none text-danger col-form-label" id="OwnerErrorComercial"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório.</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Palavra-passe:</label>
+                </div>
+                <div class="col-10">
+                    <input type="password" id="PasswordComercial" value="" placeholder="Palavra-Passe" />
+                    <div class="d-none text-danger col-form-label" id="PasswordErrorComercial"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min 8 caracteres).</div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Confirmar:</label>
+                </div>
+                <div class="col-10">
+                    <input type="password" id="PasswordConfComercial" value="" placeholder="Confrimar palavra-passe" />
+                    <div class="d-none text-danger col-form-label" id="PasswordConfErrorComercial"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório e tem que ser igual ao campo de Palavra-Passe.</div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="Charity">
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Email:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="EmailCharity" value="" placeholder="Email" />
+                    <div class="d-none text-danger col-form-label" id="EmailErrorCharity">
+                        <i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (mínimo de 10 caracteres e máximo de 100; Deve possuir o caracter @ e
+                        um ponto depois).
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Nome:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="NameCharity" value="" placeholder="Nome" />
+                    <div class="d-none text-danger col-form-label" id="NomeErrorCharity"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 10 letras; Max: 100 letras).</div>
+
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Local:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="LocalCharity" value="" placeholder="Local" />
+                    <div class="d-none text-danger col-form-label" id="LocalErrorCharity"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 10 letras; Max: 100 letras).</div>
+
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Dono:</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="OwnerCharity" value="" placeholder="Nome" />
+                    <div class="d-none text-danger col-form-label" id="OwnerErrorCharity"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório.</div>
+
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Palavra-passe:</label>
+                </div>
+                <div class="col-10">
+                    <input type="password" id="PasswordCharity" value="" placeholder="Palavra-Passe" />
+                    <div class="d-none text-danger col-form-label" id="PasswordErrorCharity"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min 8 caracteres).</div>
+
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-2">
+                    <label>Confirmar:</label>
+                </div>
+                <div class="col-10">
+                    <input type="password" id="PasswordConfCharity" value="" placeholder="Confrimar palavra-passe" />
+                    <div class="d-none text-danger col-form-label" id="PasswordConfErrorCharity"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório e tem que ser igual ao campo de Palavra-Passe.</div>
+
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center">
+            <input type="checkbox" id="Terms" value="Termos"> Ao clicar, está de acordo com os <a href="http:xxxxxxxxxx" style="color:orange">Termos e Condições</a><br />
+            <div class="d-none text-danger col-form-label" id="TermsError"><i class="fa fa-exclamation-triangle"></i> Certifique-se que leu os termos e os aceitou.</div>
+            <button id="Submit" class="btn btn-outline-warning" style="margin-top:5px"> Criar &rarr;</button>
+        </div>
+        <div style="text-align:center; margin-top:10px">
+            <u><a href="Login.html"> Já possui conta? Entre aqui</a></u>
+        </div>
+    </div>
+    <nav class="navbar navbar-dark fixed-bottom" style="background-color: #f76540;">
+        <div class="container small">
+            <div class="navbar-text">Waste Never © 2022 · Todos os direitos reservados.</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+    <script src="./Scripts/bootstrap.bundle.min.js"></script>
+
+    <script src="./Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.6.0.js"></script>
+    <script src="Javascript/Registrar.js"></script>
+
+</body>
+</html>
