@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div data-bind="loadingWhen: isLoading" class="content">
+        <span>This static content will be hidden whilst loading</span>
+    </div>
+    <a href="#" data-bind="click: asyncOperation">Fake A Load</a>
+    <script src="../Scripts/jquery-3.6.0.js"></script>
+    <script src="../Scripts/knockout-3.5.1.js"></script>
+    <script>
+        ko.bindingHandlers.loadingWhen = {
+            init: function (element, valueAccessor) {
+                console.log(valueAccessor())
+                var
+                    $element = $(element),
+                    currentPosition = $element.css("position")
+                $loader = $("<div>").addClass("loader").hide();
+
+                //add the loader
+                $element.append($loader);
+
+                //make sure that we can absolutely position the loader against the original element
+                if (currentPosition == "auto" || currentPosition == "static")
+                    $element.css("position", "relative");
+
+                //center the loader
+                $loader.css({
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    "margin-left": -($loader.width() / 2) + "px",
+                    "margin-top": -($loader.height() / 2) + "px"
+                });
+            },
+            update: function (element, valueAccessor) {
+                var isLoading = ko.utils.unwrapObservable(valueAccessor()),
+                    $element = $(element),
+                    $childrenToHide = $element.children(":not(div.loader)"),
+                    $loader = $element.find("div.loader");
+
+                if (isLoading) {
+                    $childrenToHide.css("visibility", "hidden").attr("disabled", "disabled");
+                    $loader.show();
+                }
+                else {
+                    $loader.fadeOut("fast");
+                    $childrenToHide.css("visibility", "visible").removeAttr("disabled");
+                }
+            }
+        };
+
+        //
+        // Sample View Model
+        //
+        var ViewModel = function () {
+            var _self = this;
+            this.isLoading = ko.observable(false);
+            this.asyncOperation = function () {
+                _self.isLoading(true);
+                setTimeout(function () {
+                    //wait a few seconds and then just return
+                    _self.isLoading(false);
+                }, 3000);
+            };
+        };
+
+        ko.applyBindings(new ViewModel());
+
+    </script>
+</body>
+</html>

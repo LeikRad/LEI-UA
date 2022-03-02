@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="border-bottom py-2 mb-2">Compra de bilhetes</h1>
+        <form>
+            <div class="row mb-1">
+                <label for="Nome" class="col-md-2 col-form-label">Nome</label>
+                <div class="col-md-10">
+                    <input type="text" name="Nome" id="Nome" class="form-control" />
+                    <div class="d-none text-danger col-form-label" id="NomeError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 10 letras; Max: 100 letras).</div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label for="Morada" class="col-md-2 col-form-label">Morada</label>
+                <div class="col-md-10">
+                    <textarea name="Morada" id="Morada" class="form-control" rows="4"></textarea>
+                    <div class="d-none text-danger col-form-label" id="MoradaError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Min: 20 letras; Max: 200 letras).</div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <label for="Email" class="col-md-2 col-form-label">E-mail</label>
+                <div class="col-md-4">
+                    <input type="text" name="Email" id="Email" class="form-control" />
+                    <div class="d-none text-danger col-form-label" id="EmailError">
+                        <i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (mínimo de 10 caracteres e máximo de 100; Deve possuir o caracter @ e
+                        um ponto depois e antes do final).
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">Local</div>
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input type="checkbox" name="local" class="form-check-input" value="100" id="local1"><label class="form-check-label" for="local1">Relva Frente</label><br />
+                        <input type="checkbox" name="local" class="form-check-input" value="80" id="local2"><label class="form-check-label" for="local2">Relva Trás</label><br />
+                        <input type="checkbox" name="local" class="form-check-input" value="50" id="local3"><label class="form-check-label" for="local3">Bancada Lateral</label><br />
+                        <input type="checkbox" name="local" class="form-check-input" value="65" id="local4"><label class="form-check-label" for="local4">Bancada Central</label>
+                    </div>
+                    <div class="d-none text-danger col-form-label" id="LocalError"><i class="fa fa-exclamation-triangle"></i> Este campo é de preenchimento obrigatório (Escolha dois locais).</div>
+                </div>
+            </div>
+            <div class="row mb-1">
+                <div class="col-md-2">Preço Máximo</div>
+                <div class="col-md-2">
+                    <input type="text" name="preco" id="preco" class="form-control" disabled />
+                </div>
+            </div>
+            <div class="text-center">
+                <input type="Submit" name="submitBtn" value="Enviar" class="btn btn-primary" />
+                <input type="reset" name="resetBtn" value="Limpar" class="btn btn-secondary" />
+            </div>
+        </form>
+    </div>
+    <script src="../Scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            valmax = 0
+            $("input:checkbox").change(function () {
+                var list = $('input:checkbox:checked');
+                if (list.length > 0) {
+                    if (this.checked) {
+                        if (parseInt(this.value) > valmax) {
+                            valmax = this.value
+                        }
+                    } else {
+                        var tempmax = 0
+                        for (let i = 0; i < (list.length); i++) {
+                            if (parseInt(list[i].value) > tempmax) {
+                                tempmax = list[i].value
+                            }
+                        }
+                        valmax = tempmax
+                    }
+                } else {
+                    valmax = 0
+                }
+                $("#preco").val(valmax)
+            });
+            $("input:Submit").click(function () {
+                var ver = true;
+                if (($.trim($("#Nome").val())).length < 10 || ($.trim($("#Nome").val())).length > 100) {
+                    ver = false
+                    $("#NomeError").addClass("d-block")
+                    $("#NomeError").removeClass("d-none")
+                } else {
+                    $("#NomeError").removeClass("d-block")
+                    $("#NomeError").addClass("d-none")
+                }
+                console.log()
+                if (($.trim($("#Morada").val())).length < 20 || ($.trim($("#Morada").val())).length > 200) {
+                    ver = false
+                    $("#MoradaError").addClass("d-block")
+                    $("#MoradaError").removeClass("d-none")
+                } else {
+                    $("#MoradaError").removeClass("d-block")
+                    $("#MoradaError").addClass("d-none")
+                }
+                if (($("input:checkbox:checked").length) != 2) {
+                    ver = false
+                    $("#LocalError").addClass("d-block")
+                    $("#LocalError").removeClass("d-none")
+                } else {
+                     $("#LocalError").removeClass("d-block")
+                    $("#LocalError").addClass("d-none")
+                }
+                if ($.trim($("#Email").val()).length < 10 || ($.trim($("#Email").val())).length > 100 || ($("#Email").val()).indexOf("@") == -1 || ($("#Email").val()).lastIndexOf(".") < ($("#Email").val()).indexOf("@") || ($("#Email").val()).indexOf(".") > ($("#Email").val()).indexOf("@")) {
+                    ver = false
+                    $("#EmailError").addClass("d-block")
+                    $("#EmailError").removeClass("d-none")
+                } else {
+                    $("#EmailError").addClass("d-none")
+                    $("#EmailError").removeClass("d-block")
+                }
+                
+                return false
+            })
+
+        });
+    </script>
+</body>
+
+</html>

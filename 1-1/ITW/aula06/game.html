@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        .piece {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            opacity: .8;
+        }
+
+            .piece:hover {
+                opacity: .5
+            }
+
+        #red {
+            background-color: red;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="border-bottom pb-2 mb-2">
+
+
+            <h1> test123</h1>
+            <hr />
+
+            <div class="text-left">
+                <button onclick="shuffle()" class="btn btn-primary">Baralhar!</button>
+                <p id="text"></p>
+            </div>
+
+            <piece id="red" class="piece" onmouseover="overDetails()" onmouseleave="clearInfo()"></piece>
+            <piece id="green" class="piece" onmouseover="overDetails()" onmouseleave="clearInfo()"></piece>
+            <piece id="yellow" class="piece" onmouseover="overDetails()" onmouseleave="clearInfo()"></piece>
+            <piece id="blue" class="piece" onmouseover="overDetails()" onmouseleave="clearInfo()"></piece>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
