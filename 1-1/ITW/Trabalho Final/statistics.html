@@ -1,0 +1,122 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITW 2021/22 - Statistics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="Index.css" rel="stylesheet" />
+    <style>
+        .box {
+            height: 20px;
+            width: 20px;
+            display: inline-block;
+            position: absolute;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container-fluid" style="width:95%">
+            <a class="navbar-brand" href="index.html">
+                <img src="Images/formula-1-logo.png" class="logo" aria-current="page" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="drivers.html">Drivers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="constructors.html">Constructors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nationalities.html">Nationalities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="circuits.html">Circuits</a></li>
+                    <li class="nav-item"><a class="nav-link" href="countries.html">Countries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="races.html">Races</a></li>
+                    <li class="nav-item"><a class="nav-link" href="seasons.html">Seasons</a></li>
+                    <li class="nav-item"><a class="nav-link" href="favorites.html">Favourites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="statistics.html">Statistics</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Work Area-->
+    <div class="container" style="margin-top:5%">
+        <div class="text-center">
+            <h1>Search a driver statistics:</h1>
+            <input id="search" class="form-control border-danger border-3 ui-widget" type="search" placeholder="Search" aria-label="Search" autocomplete="off" style="width:200px; margin:auto">
+        </div>
+        <div data-bind="visible: ShouldShow">
+            <hr />
+            <h2 class="text-center" style="color:red" data-bind="text: DriverName() + ' ( ID:' + DriverId() + ' ) '"></h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <img data-bind="safeSrc: {src:ImageUrl, fallback:'Images/966-9665317_placeholder-image-person-jpg.png'}" style="width:306px;height:306px" />
+                </div>
+                <div class="col-md-8">
+                    <div id="chart_div">
+                    </div>
+                    <div class="text-end"> <div class="box red"></div><div>Lugar diferente de 1º - &nbsp</div><div class="box green"></div><div>1º Lugar - &nbsp</div></div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-6 text-end">
+                    <h3 data-bind="text: 'Total Races: '+ Races()"></h3>
+                </div>
+                <div class="col-md-6 text-start">
+                    <h3 data-bind="text: 'Total Wins: '+ Wins()"></h3>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <img src="Images/formula-1-logo.png" height="30" /> Loading data...
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fa fa-spin fa-3x fa-refresh"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Work Area -->
+    <nav class="navbar navbar-dark bg-black fixed-bottom">
+        <div class="container small">
+            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2021/22</div>
+            <div class="navbar-text">Made by <a href="mailto:bernardo.figueiredo@ua.pt" class="text-decoration-none text-muted">Bernardo Figueiredo</a> and <a href="mailto:brunopascoa03@ua.pt" class="text-decoration-none text-muted">Bruno Páscoa</a>.</div>
+            <div class="navbar-nav">
+                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+            </div>
+        </div>
+    </nav>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/knockout@3.5.1/build/output/knockout-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="statistics.js"></script>
+</body>
+</html>
